@@ -1,0 +1,58 @@
+<!-- <h1>{{post.title}} <a class="small" ng-if="user" href="#/admin/posts/{{post.id}}">edit</a></h1>
+<hr>
+<h5>{{post.datetime}}</h5>
+<div ng-bind-html="post.body"></div> -->
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<!--  ng-style="{'background-image': 'url('+post.image+')'}" -->
+<header class="intro-header" style="background-image: url('images/Staff.Net.Image.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- ng-class="{'no-image':!post.image}" -->
+                <div class="post-heading" heading-parallex>
+                    <h1>{{post.title}}</h1>
+                    <h2 class="subheading">{{post.subtitle}}</h2>
+                    <span ng-if="post.published_at" class="meta">Posted<!--  by <a href="#">{{post.author}}</a> --> on {{post.published_at | formatdate}}</span>
+                    <span ng-if="!post.published_at" class="meta">Created<!--  by <a href="#">{{post.author}}</a> --> on {{post.created_at | formatdate}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" ta-bind ng-model="post.body">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Footer -->
+<footer ng-if="nextpost" class="readNext">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 class="postFooter-title"><strong>Read Next</strong></h3>
+                <hr>
+                <div class="post-preview">
+                    <a href="#/posts/{{nextpost.id}}">
+                        <h2 class="post-title">
+                           {{nextpost.title}}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{nextpost.subtitle}}
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted <!-- by <a href="#">Start Bootstrap</a>  -->on {{nextpost.published_at | formatdate}}</p>
+                </div>
+                <!-- <p class="copyright text-muted">Copyright &copy; NCUK 2015</p> -->
+            </div>
+        </div>
+    </div>
+</footer>

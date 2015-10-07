@@ -1,0 +1,76 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('images/Staff.Net.Image.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Blog</h1>
+                    <!-- <img src="images/updates-logo.png" class="hidden-xs" height="88" width="650"> -->
+                    <!-- <img src="images/updates-logo.png" class="visible-xs logo" height="47" width="350"> -->
+                    <hr class="small">
+                    <span class="subheading">Blog engine by David Harrison</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+	<div class="row">
+	    <div class="col-lg-7 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <header ng-if="tag" class="tagHeader layoutSingleColumn">
+                <div class="tagHeader-prefix">Tagged in</div>
+                <h1 class="tagHeader-title">{{tag | parse}}</h1>
+                <hr>
+            </header>
+            <!-- <p ng-if="tag">Posts tagged <span class="label label-info">{{tag.text}}</span></p> -->
+	      	<div ng-include="'views/posts.html'"></div>  
+	    </div>
+        <div ng-if="!tag" class="col-lg-3 col-md-1 sidebar">
+            <h4>Tags</h4>
+            <div ng-include="'views/tags.html'"></div>
+        </div>
+	</div>
+</div>
+
+
+<hr> 
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <!-- <li>
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li> -->
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; David Harrison 2015</p>
+            </div>
+        </div>
+    </div>
+</footer>

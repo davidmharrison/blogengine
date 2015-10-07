@@ -1,0 +1,1 @@
+Rename .env.example to .env and populate MANDRILL_KEY and DB_* values

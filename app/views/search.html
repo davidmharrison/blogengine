@@ -1,0 +1,50 @@
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+	<div class="row">
+		<div class="search col-md-12">
+			<input name="search" placholder="Search" class="form-control jumbo" autofocus ng-model="search" placeholder="Type to search">
+		</div>
+		<div ng-if="search" class="">
+			<div class="col-md-4">
+				<hr>
+				<div class="tags">
+					<div class="heading-content">
+						<h4 class="heading-title">Tags</h4>
+					</div>
+					<div class="tags--postTags">
+					    <a ng-repeat="tag in tags | filter:{'text':search}" href="#/tag/{{tag.text}}">{{tag.text | parse}}</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<hr>
+				<div class="posts">
+					<div class="heading-content">
+						<h4 class="heading-title">Posts</h4>
+					</div>
+					<div class="post-preview" ng-repeat="post in posts | newfilter:{$:search} | filter:{draft:0} | orderBy:'published_at':1">
+					    <a href="#/posts/{{post.id}}">
+					        <h2 class="post-title">
+					           {{post.title}}
+					        </h2>
+					        <h3 class="post-subtitle">
+					            {{post.subtitle}}
+					        </h3>
+					        <div ng-if="containsWord(post.body)" ng-bind-html="post.body | snippit:search"></div>
+					    </a>
+					    <p class="post-meta">Posted <!-- by <a href="#">Start Bootstrap</a>  -->on {{post.published_at | formatdate}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

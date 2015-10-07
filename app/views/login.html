@@ -1,0 +1,70 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('images/Staff.Net.Image.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Login</h1>
+                    <hr class="small">
+                    <span class="subheading">Login to Blog</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+	<div class="row">
+	    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<div class="form-signin form-horizontal">
+				<form name="login-form" class="" ng-submit="attemptLogin()">
+					<div ng-show="loggingin" class="text-center">
+						<h2 class="form-signin-heading">Logging in...</h2>
+						<img src="images/ajax-loader.gif">
+					</div>
+				    <h2 ng-show="forgot==true && !loggingin" class="form-signin-heading text-center">Password Reset</h2>
+					<h2 ng-show="forgot==false" ng-hide="loggingin" class="form-signin-heading text-center">Secure Sign In</h2>
+					<div ng-show="!forgot && !email" class="form-group">
+						<div class="col-md-12">
+							<input ng-model="username" name="login" type="text" class="input-block-level input-sm form-control" id="login" autocomplete="on" placeholder="Email address">
+						</div>
+					</div>
+					<div ng-show="!forgot && !email" class="form-group">
+						<div class="col-md-12">
+							<input ng-model="password" name="password" type="password" class="input-block-level input-sm form-control" id="password" autocomplete="on" placeholder="Password">
+						</div>
+					</div>
+					<div ng-show="!forgot && !email" class="form-group">
+						<div class="col-md-12">
+				    		<button ng-show="!isSigningin" class="btn btn-block btn-sm btn-primary" id="signin" type="submit">Sign In</button>
+				    		<button ng-show="isSigningin" class="btn btn-block btn-sm btn-primary" disabled id="signin1" >Signing In <img width="20" height="20" src="images/loader.gif"></button>
+						</div>
+					</div>
+				</form>
+				<div ng-show="error">
+					<div id="error" class="alert alert-danger">{{error}}</div>
+				</div>
+				<div ng-model="forgot">
+					<div ng-show="forgot==true && !emaireminder" class="form-group">
+						<div class="col-md-12">
+				    		<input ng-model="email" name="email" type="text" class="input-block-level input-sm form-control" id="email" placeholder="Email address">
+						</div>
+						<br>
+						<br>
+						<div class="col-md-12">
+							<button class="btn btn-sm btn-default col-md-5" ng-click="forgot=false" id="cancel" type="submit">Nevermind</button>
+				    		<button class="btn btn-sm btn-primary col-md-6 col-md-offset-1" ng-click="resetpassword()" id="resetpassword" type="submit">Reset Password</button>
+						</div>
+					</div>
+					<div ng-show="emaireminder">
+						<div class="alert alert-info">You have been sent a password reset email</div>
+					</div>
+				</div>
+				<!-- <div ng-show="forgot!=true" class="text-center forgotpass">
+					<button ng-click="forgot=true" style="color:#000;" type="button" class="btn btn-link">Forgot Password?</button>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</div>

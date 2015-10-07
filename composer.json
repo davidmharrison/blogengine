@@ -1,0 +1,19 @@
+{
+    "name": "ncuk/staff",
+    "description": "Centre Staff and Teachers Update Blog",
+    "require": {
+        "slim/slim": "~2.5",
+        "laravel/laravel": "~4.2",
+        "sergeytsalkov/meekrodb": "~2.3",
+        "mandrill/mandrill": "~1.0",
+        "codeguy/upload": "*",
+        "vlucas/phpdotenv": "^2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "watchinharrison",
+            "email": "watchinharrison@me.com"
+        }
+    ]
+}

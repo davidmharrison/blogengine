@@ -1,0 +1,70 @@
+.sidebar h4, h2.post-title {
+	color: #bd202e;
+}
+.post-heading {
+	text-align: center;
+}
+
+.intro-header .post-heading .subheading {
+	font-weight: 300;
+}
+
+.intro-header .post-heading .subheading {
+	color: rgba(255,255,255,1);
+}
+
+.intro-header .post-heading.no-image .subheading {
+	color: rgba(0,0,0,0.44);
+}
+
+.intro-header .post-heading.no-image {
+  color: #000;
+}
+
+.navbar.sans-image .navbar-brand {
+	color:#404040;
+}
+
+.navbar.sans-image .navbar-brand:hover, .navbar.sans-image .navbar-brand:focus{
+	color:#0085a1;
+};
+
+.navbar.sans-image .nav li a{
+	color:#404040
+}
+
+.navbar.sans-image .nav li a:hover,.navbar.sans-image .nav li a:focus{
+	color:#0085a1
+}
+
+.fileinput .btn-file {
+	padding: 6px 12px;
+}
+
+.btn-sm, .btn-group-sm > .btn {
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 3px;
+}
+
+tags-input .tags {
+	border-radius: 5px;
+}
+
+tags-input .tags .tag-item {
+	background: #5bc0de;
+	color: #fff;
+	border: 0px;	
+}
+tags-input .tags .tag-item .remove-button {
+	color: #fff;
+}
+.post-preview p {
+  margin: 15px 0px;
+}
+span.highligh {
+  background: #bd202e;
+  color: white;
+  padding: 3px;
+}

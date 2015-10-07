@@ -1,0 +1,74 @@
+<header class="intro-header" style="background-image: url('images/Staff.Net.Image.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>New Post</h1>
+                    <hr class="small">
+                    <h2 class="subheading">Create a new Post</h2>
+                    <!-- <span class="meta">Posted on {{post.datetime | formatdate}}</span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+
+		<form class="form-horizontal" name="newpost">
+			<fieldset>
+			    <!-- <legend>New Post</legend> -->
+			    <div class="form-group">
+					<!-- <label class="control-label col-sm-4" for="inputTitle">Title</label> -->
+				    <div class="controls col-sm-12">
+						<input class="form-control" required="true" ng-model="post.title" type="text" placeholder="Title">
+				    </div>
+			    </div>
+			    <div class="form-group">
+					<!-- <label class="control-label col-sm-4" for="inputTitle">Title</label> -->
+				    <div class="controls col-sm-12">
+						<input class="form-control" ng-model="post.subtitle" type="text" placeholder="Subtitle">
+				    </div>
+			    </div>
+			    <div class="form-group">
+					<!-- <label class="control-label col-sm-4" for="inputTitle">Title</label> -->
+				    <div class="controls col-sm-12">
+						<div text-angular ng-model="post.body"></div>
+				    </div>
+			    </div>
+			    <div class="form-group">
+					<!-- <label class="control-label col-sm-4" for="inputTitle">Title</label> -->
+				    <div class="controls col-sm-12">
+						<!-- <input class="form-control" data-role="tagsinput" ng-model="post.tags" type="text" placeholder="Tags"> -->
+						<tags-input ng-model="post.tags">
+						  <auto-complete source="tags"></auto-complete>
+						</tags-input>
+				    </div>
+			    </div>
+			    <!-- <div class="form-group">
+			    	<label class="col-sm-12" for="inputTitle">Header Image</label>
+				    <div class="controls col-sm-12">
+						<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+						  <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+						  <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span>
+						  	<input ng-file-drop ng-multiple="false" accept="image/*" ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="dragdrop" ng-file-select="onFileSelect($files)" type="file" name="image">
+						  </span>
+						  <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+						</div>
+					</div>
+			    </div> -->
+			    <!-- <div class="form-group">
+					
+			    </div> -->
+			</fieldset>
+			<button ng-disabled="newpost.$invalid" ng-click="draftPost()" type="submit" id="save" class="btn btn-warning save">Save as Draft</button>
+			<br>
+			<br>
+			<button ng-show="isSaving" disabled type="submit" class="btn btn-success save" id="saving">Saving <img width="20" height="20" src="images/loader.gif"></button>
+			<button ng-show="!isSaving" ng-disabled="newpost.$invalid" ng-click="savePost()" type="submit" id="save" class="btn btn-success save">Save & Publish</button>
+			<br>
+			<br>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,85 @@
+<!--  ng-style="{'background-image': 'url('+post.image+')'}"  -->
+<header class="intro-header" style="background-image: url('images/Staff.Net.Image.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!--  ng-class="{'no-image':!post.image}" -->
+                <div class="post-heading">
+                    <h1>{{post.title}}</h1>
+                    <h2 class="subheading">{{post.subtitle}}</h2>
+                    <span class="meta">Posted<!-- by <a href="#">Start Bootstrap</a> --> on {{post.created_at | formatdate}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container">
+    <div class="row">
+		<form class="form-horizontal" name="newpost">
+			<fieldset>
+			    <!-- <legend>New Post</legend> -->
+			    <div class="form-group">
+					<!-- <label class="control-label col-sm-4" for="inputTitle">Title</label> -->
+				    <div class="controls col-sm-12">
+						<input class="form-control" ng-model="post.title" type="text" placeholder="Title">
+				    </div>
+			    </div>
+			    <div class="form-group">
+					<!-- <label class="control-label col-sm-4" for="inputTitle">Title</label> -->
+				    <div class="controls col-sm-12">
+						<input class="form-control" ng-model="post.subtitle" type="text" placeholder="Subtitle">
+				    </div>
+			    </div>
+			    <div class="form-group">
+					<!-- <label class="control-label col-sm-4" for="inputTitle">Title</label> -->
+				    <div class="controls col-sm-12">
+						<div text-angular ng-model="post.body"></div>
+				    </div>
+			    </div>
+			    <div class="form-group">
+					<!-- <label class="control-label col-sm-4" for="inputTitle">Title</label> -->
+				    <div class="controls col-sm-12">
+						<!-- <input class="form-control" data-role="tagsinput" ng-model="post.tags" type="text" placeholder="Tags"> -->
+						<tags-input ng-model="post.tags">
+						  <auto-complete source="tags"></auto-complete>
+						</tags-input>
+				    </div>
+			    </div>
+			    <!-- <div class="form-group">
+				    <label class="col-sm-12" for="inputTitle">Header Image</label>
+				    <div ng-if="post.image" class="controls col-sm-4">
+						<button ng-click="post.image=null" class="btn btn-danger btn-sm">Remove Image</button>
+				    </div>
+				    <div class="controls" ng-class="{'col-sm-8':post.image,'col-sm-12':!post.image}">
+						<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+						  <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+						  <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span>
+						  	<input ng-file-drop ng-multiple="false" accept="image/*" ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="dragdrop" ng-file-select="onFileSelect($files)" type="file" name="image">
+						  </span>
+						  <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+						</div>
+					</div>
+			    </div> -->
+			</fieldset>
+			<button ng-if="isSaving" disabled type="submit" class="btn btn-success save" id="saving">Saving <img width="20" height="20" src="images/loader.gif"></button>
+			<button ng-if="!isSaving && post.draft == 1" ng-disabled="newpost.$invalid" ng-click="savePost()" type="submit" id="save" class="btn btn-warning save">Update Draft</button>
+			<br>
+			<br>
+			<button ng-if="!isSaving && post.published == 1" ng-disabled="newpost.$invalid" ng-click="savePost()" type="submit" id="save" class="btn btn-success save">Update</button>
+			<button ng-if="!isSaving && post.published == 0" ng-disabled="newpost.$invalid" ng-click="post.published=1;post.draft=0;savePost()" type="submit" id="save" class="btn btn-success save">Publish</button>
+			<button ng-if="!isSaving && post.published == 1" ng-disabled="newpost.$invalid" ng-click="post.published=0;post.draft=1;savePost()" type="submit" id="save" class="btn btn-danger save">Unpublish</button>
+			<br>
+			<br>
+		</form>
+	</div>
+</div>
+
+ <!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" ng-bind-html="post.body">
+            
+        </div>
+    </div>
+</div> -->
